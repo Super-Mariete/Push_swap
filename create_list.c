@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 18:46:48 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/13 15:05:40 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/13 20:55:21 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,15 @@ t_lista *found_last(t_lista **begin)
 t_lista	*create_nodo(char *str)
 {
 	t_lista *nodo;
-	long *n;
 
 	nodo = malloc(sizeof(t_lista));
 	if (!nodo)
 		return (NULL);
-	n = malloc(sizeof(long));
-	if (!n)
-	{
-		free(nodo);
-		return (NULL);
-	}
-	*n = atol(str);
-	nodo->data = n;
+	nodo->data = atol(str);
+	nodo->index = 0;
 	nodo->next = NULL;
 	return (nodo);
 }
-
 
 void	add_nodo(t_lista **begin, char *data)
 {

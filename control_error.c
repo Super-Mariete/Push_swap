@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 12:46:42 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/13 14:45:38 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/13 19:12:10 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,10 @@ void control_error(int argc, char **argv)
     int     i;
 
     if (argc < 2 || !argv[1] || !*argv[1])
-        exit(0);
-
+    {
+    	ft_putchar('\n');
+    	exit(0);
+    }
     if (argc == 2)
         all_args = ft_strdup(argv[1]);
     else

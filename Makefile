@@ -6,7 +6,7 @@
 #    By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/10 18:41:33 by made-ped          #+#    #+#              #
-#    Updated: 2025/07/12 00:50:11 by made-ped         ###   ########.fr        #
+#    Updated: 2025/07/15 13:27:27 by made-ped         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRC        = main.c\
 		swap_funtions.c\
 		push_funtions.c\
 		rotate_funtions.c\
-		reverse_rotate_funtions.c
+		reverse_rotate_funtions.c\
+		sort_stack.c\
+		sort_small.c
 OBJ        = $(SRC:.c=.o)
 
 LIBFT_DIR  = libft
