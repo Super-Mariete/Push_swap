@@ -6,11 +6,22 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 21:56:20 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/15 13:43:59 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/15 20:02:06 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void free_list(t_lista *stack)
+{
+    t_lista *tmp;
+    while (stack)
+    {
+        tmp = stack->next;
+        free(stack);
+        stack = tmp;
+    }
+}
 
 void print_values(t_lista *stack)
 {
@@ -76,5 +87,7 @@ int	main(int argc, char **argv)
 //	ft_putchar('\n');
 	sort_stack(&stack_a, &stack_b);
 //	print_values(stack_a);
+	free_list(stack_a);
+	free_list(stack_b);
 	return (0);
 }

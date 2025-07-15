@@ -45,6 +45,7 @@ void    radix_sort(t_lista **a, t_lista **b);
 void    sort_small_stack(t_lista **a, t_lista **b);
 void	sort_five(t_lista **stack_a, t_lista **stack_b);
 void	sort_three(t_lista **stack);
+void	free_list(t_lista *stack);
 t_lista	*create_nodo(char *str);
 t_lista	*found_last(t_lista **begin);
 long    ft_atol(const char *str);
