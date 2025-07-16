@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:00:58 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/16 22:33:23 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:50:15 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	radix_sort(t_lista **a, t_lista **b)
 
 	i = 0;
 	size = ft_lstsize_lista(*a);
-	max = get_max_bits(*a);
+	max_bits = get_max_bits(*a);
 	while (i < max_bits)
 	{
 		j = 0;

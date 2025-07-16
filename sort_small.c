@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:11:23 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/16 22:23:18 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:07:19 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void	sort_five(t_lista **stack_a, t_lista **stack_b)
 			ra(stack_a);
 	}
 	sort_three(stack_a);
-	if ((*stack_b)->index < (*stack_b)->next->index)
+	if (*stack_b && (*stack_b)->next && (*stack_b)->index
+		< (*stack_b)->next->index)
 		sb(stack_b);
 	pa(stack_b, stack_a);
 	pa(stack_b, stack_a);
