@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 00:47:23 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/12 00:49:41 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/16 21:28:02 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rra(t_lista **a)
 	t_lista	*last;
 
 	if (!*a || !(*a)->next)
-		return;
+		return ;
 	prev = NULL;
 	last = *a;
 	while (last->next)
@@ -38,7 +38,7 @@ void	rrb(t_lista **b)
 	t_lista	*last;
 
 	if (!*b || !(*b)->next)
-		return;
+		return ;
 	prev = NULL;
 	last = *b;
 	while (last->next)

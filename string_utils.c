@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   string_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: made-ped <made-ped@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/16 21:29:52 by made-ped          #+#    #+#             */
+/*   Updated: 2025/07/16 22:43:37 by made-ped         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_putchar(char c)
@@ -7,10 +19,10 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
@@ -19,10 +31,11 @@ void	ft_putstr(char *str)
 
 void	free_split(char **split)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	if (!split)
-		return;
+		return ;
 	while (split[i])
 	{
 		free(split[i]);
@@ -30,7 +43,6 @@ void	free_split(char **split)
 	}
 	free(split);
 }
-
 
 long	ft_atol(const char *str)
 {
@@ -54,30 +66,28 @@ long	ft_atol(const char *str)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-
 	return (result * sign);
 }
 
-char *join_all_arguments(int argc, char **argv)
+char	*join_all_arguments(int argc, char **argv)
 {
-    char *joined;
-    char *tmp;
-    int i;
+	char	*joined;
+	char	*tmp;
+	int		i;
 
-    joined = ft_strdup(argv[1]);
-    if (!joined)
-        return NULL;
-
-    i = 2;
-    while (i < argc)
-    {
-        tmp = ft_strjoin(joined, " ");
-        free(joined);
-        joined = ft_strjoin(tmp, argv[i]);
-        free(tmp);
-        if (!joined)
-            return NULL;
-        i++;
-    }
-    return joined;
+	joined = ft_strdup(argv[1]);
+	if (!joined)
+		return (NULL);
+	i = 2;
+	while (i < argc)
+	{
+		tmp = ft_strjoin(joined, " ");
+		free(joined);
+		joined = ft_strjoin(tmp, argv[i]);
+		free(tmp);
+		if (!joined)
+			return (NULL);
+		i++;
+	}
+	return (joined);
 }

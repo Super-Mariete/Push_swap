@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 00:31:31 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/12 00:35:15 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/16 21:26:54 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pa(t_lista **a, t_lista **b)
 	t_lista	*tmp;
 
 	if (!*b)
-		return;
+		return ;
 	tmp = *b;
 	*b = (*b)->next;
 	tmp->next = *a;
@@ -30,7 +30,7 @@ void	pb(t_lista **a, t_lista **b)
 	t_lista	*tmp;
 
 	if (!*a)
-		return;
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = *b;
