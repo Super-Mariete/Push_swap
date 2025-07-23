@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: made-ped <made-ped@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:11:23 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/16 23:07:19 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/23 23:30:24 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ void	sort_three(t_lista **stack)
 		rra(stack);
 }
 
+void	sort_four(t_lista **stack_a, t_lista **stack_b)
+{
+	while (ft_lstsize_lista(*stack_a) > 3)
+	{
+		if ((*stack_a)->index == 0)
+			pb(stack_a, stack_b);
+		else
+			ra(stack_a);
+	}
+	sort_three(stack_a);
+	pa(stack_b, stack_a);
+}
+
 void	sort_five(t_lista **stack_a, t_lista **stack_b)
 {
 	while (ft_lstsize_lista(*stack_a) > 3)
@@ -65,6 +78,8 @@ void	sort_small_stack(t_lista **a, t_lista **b)
 		sa(a);
 	else if (size == 3)
 		sort_three(a);
-	else if (size <= 5)
+	else if (size == 4)
+		sort_four(a, b);
+	else if (size == 5)
 		sort_five(a, b);
 }

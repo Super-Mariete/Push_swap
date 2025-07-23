@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   control_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: made-ped <made-ped@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: made-ped <made-ped@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 12:46:42 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/16 21:57:43 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/23 23:54:13 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,20 @@ int	is_valid_number(const char *str)
 	return (1);
 }
 
-void	validate_token(const char *token)
+int	validate_token(const char *token)
 {
 	long	num;
 
 	if (!is_valid_number(token))
 	{
-		ft_putstr_fd(ERROR_MESSAGE, 2);
-		exit(1);
+		return (1);
 	}
 	num = ft_atol(token);
 	if (num > INT_MAX || num < INT_MIN)
 	{
-		ft_putstr_fd(ERROR_LIMIT, 2);
-		exit(1);
+		return (1);
 	}
+	return (0);
 }
 
 void	check_duplicates(char **tokens)
@@ -65,6 +64,7 @@ void	check_duplicates(char **tokens)
 			if (num_i == num_j)
 			{
 				ft_putstr_fd(ERROR_DOBLE, 2);
+				free_split(tokens);
 				exit(1);
 			}
 			j++;
@@ -79,7 +79,6 @@ static void	handle_arguments(int argc, char **argv, char ***tokens)
 
 	if (argc < 2 || !argv[1] || !*argv[1])
 	{
-		ft_putchar('\n');
 		exit(0);
 	}
 	if (argc == 2)
@@ -90,14 +89,13 @@ static void	handle_arguments(int argc, char **argv, char ***tokens)
 	free(all_args);
 	if (!(*tokens)[1])
 	{
-		ft_putstr_fd(ERROR_1ARGC, 2);
+		free_split(*tokens);
 		exit(0);
 	}
 	if (!*(*tokens))
 	{
-		ft_putstr_fd(ERROR_VACIO, 2);
 		free_split(*tokens);
-		exit(1);
+		exit(0);
 	}
 }
 
@@ -105,14 +103,22 @@ void	control_error(int argc, char **argv)
 {
 	char	**tokens;
 	int		i;
+	int		check;
 
 	handle_arguments(argc, argv, &tokens);
 	i = 0;
 	while (tokens[i])
 	{
-		validate_token(tokens[i]);
+		check = validate_token(tokens[i]);
+		if (check == 1)
+		{
+			ft_putstr_fd(ERROR, 2);
+			free_split(tokens);
+			exit(1);
+		}
 		i++;
 	}
 	check_duplicates(tokens);
+	check_order(tokens);
 	free_split(tokens);
 }

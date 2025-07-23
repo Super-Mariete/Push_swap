@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: made-ped <made-ped@student.42madrid.c      +#+  +:+       +#+         #
+#    By: made-ped <made-ped@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 21:07:47 by made-ped          #+#    #+#              #
-#    Updated: 2025/07/16 21:08:01 by made-ped         ###   ########.fr        #
+#    Updated: 2025/07/23 23:00:08 by made-ped         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CFLAGS     = -Wall -Wextra -Werror
 NAME       = push_swap
 SRC        = main.c \
 		control_error.c \
+		check_order.c\
 		string_utils.c \
 		create_list.c \
 		swap_funtions.c \

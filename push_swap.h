@@ -3,29 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: made-ped <made-ped@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: made-ped <made-ped@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:01:10 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/16 22:09:40 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/23 23:55:25 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
 # include <unistd.h>
 # include <limits.h>
 # include "libft/libft.h"
 
-# define ERROR_MESSAGE "Los parametros no son correctos primo\n"
-# define ERROR_LIMIT "Te pasate de número bro\n"
-# define ERROR_DOBLE "El número está duplicado chaval\n"
-# define ERROR_VACIO "El string esta vacio man\n"
-# define ERROR_1ARGC "Solo hay un número menda\n"
+# define ERROR "ERROR\n"
+# define ERROR_DOBLE "ERROR\n"
+# define ERROR_VACIO "ERROR\n"
 
 typedef struct s_lista
 {
@@ -37,6 +32,7 @@ typedef struct s_lista
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	control_error(int argc, char **argv);
+void	check_order(char **tokens);
 void	free_split(char **split);
 void	create_list(int argc, char **argv, t_lista **lista);
 void	add_nodo(t_lista **begin, char *data);
