@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 12:46:42 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/23 23:54:13 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/24 00:24:41 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	check_duplicates(char **tokens)
 			num_j = ft_atol(tokens[j]);
 			if (num_i == num_j)
 			{
-				ft_putstr_fd(ERROR_DOBLE, 2);
+				ft_putstr_fd(ERROR, 2);
 				free_split(tokens);
 				exit(1);
 			}

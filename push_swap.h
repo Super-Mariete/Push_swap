@@ -6,7 +6,7 @@
 /*   By: made-ped <made-ped@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 22:01:10 by made-ped          #+#    #+#             */
-/*   Updated: 2025/07/23 23:55:25 by made-ped         ###   ########.fr       */
+/*   Updated: 2025/07/24 00:25:09 by made-ped         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include "libft/libft.h"
 
 # define ERROR "ERROR\n"
-# define ERROR_DOBLE "ERROR\n"
-# define ERROR_VACIO "ERROR\n"
 
 typedef struct s_lista
 {
